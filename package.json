@@ -1,0 +1,52 @@
+{
+    "name": "npm-packages",
+    "version": "0.0.1",
+    "description": "A library of React components.",
+    "author": "Anand Kumar <elanandkumar@gmail.com>",
+    "private": false,
+    "scripts": {
+        "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
+        "test": "jest --coverage --verbose",
+        "bootstrap": "lerna bootstrap",
+        "build": "lerna exec --parallel -- babel src -d dist --ignore **/*.spec.js,**/*.story.js",
+        "build-storybook": "build-storybook",
+        "publish": "lerna publish --skip-git",
+        "prepublish": "npm run build",
+        "precommit": "npm test",
+        "postinstall": "npm run bootstrap"
+    },
+    "homepage": "https://github.com/elanandkumar/react-web-components#README",
+    "bugs": {
+        "url": "https://github.com/elanandkumar/react-web-components/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/elanandkumar/react-web-components.git"
+    },
+    "keywords": [
+        "React",
+        "components",
+        "library",
+        "elanandkumar",
+        "web components"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.4",
+        "@babel/parser": "^7.4.4",
+        "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "@babel/preset-react": "^7.0.0",
+        "@storybook/react": "^5.0.11",
+        "babel-jest": "^24.8.0",
+        "babel-loader": "^8.0.6",
+        "enzyme": "^3.9.0",
+        "enzyme-adapter-react-16": "^1.13.0",
+        "glob-loader": "^0.3.0",
+        "jest": "^24.8.0",
+        "lerna": "^3.14.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-test-renderer": "^16.8.6"
+    }
+}
